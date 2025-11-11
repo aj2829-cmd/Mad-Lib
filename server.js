@@ -65,4 +65,6 @@ if (process.argv[2] === 'local') {
   port = 8080;
 }
 
-server.listen(port, () => console.log('✅ Ready on localhost!'));
+const PORT = process.env.PORT || 8080;
+
+server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
