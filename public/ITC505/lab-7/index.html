@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ITC505 - Lab 7: Mad Lib Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lab 7: Mad Lib Generator</h1>
+    <p>Fill in the blanks below to create your personalized story!</p>
+  </header>
+
+  <main>
+    <form action="/ITC505/lab-7/index.html" method="POST" class="madlib-form">
+      <label for="noun">Noun:</label>
+      <input type="text" id="noun" name="noun" required>
+
+      <label for="pluralNoun">Plural Noun:</label>
+      <input type="text" id="pluralNoun" name="pluralNoun" required>
+
+      <label for="adjective">Adjective:</label>
+      <input type="text" id="adjective" name="adjective" required>
+
+      <label for="verb">Verb:</label>
+      <input type="text" id="verb" name="verb" required>
+
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" required>
+
+      <button type="submit">Generate Story</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Last updated: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
+
+  <!-- ================= ADDENDUM ================= -->
+  <section id="addendum">
+    <h2>Addendum</h2>
+    <p><strong>Purpose:</strong> This lab demonstrates the integration of front-end and back-end technologies using ExpressJS. 
+      The goal was to create an interactive web application that receives form input, processes it server-side, and returns 
+      a dynamically generated story using user-provided data.</p>
+
+    <p><strong>Process:</strong> The form in <code>index.html</code> collects five input fields—noun, plural noun, adjective, 
+      verb, and place—and sends them to the server using the <code>POST</code> method. The Express server defined in 
+      <code>server.js</code> receives this input via <code>req.body</code> and constructs a custom story string that is 
+      dynamically embedded in an HTML response. This showcases the concept of server-side rendering without using 
+      a templating engine.</p>
+
+    <p><strong>Technology:</strong> The project uses Express for routing, Morgan for logging, and Node.js for execution. 
+      The front end uses semantic HTML5 and CSS for structure and design. The included “last modified” script dynamically 
+      updates the timestamp for version tracking.</p>
+
+    <p><strong>Challenges:</strong> The main challenge was ensuring the correct routing between the static file directory 
+      and the POST route while keeping form submission on the same URL. Debugging was simplified using Morgan logs.</p>
+
+    <p><strong>Conclusion:</strong> This project demonstrates the use of back-end JavaScript to dynamically generate and 
+      serve web content while providing a fun, interactive experience for users. The application can be easily extended 
+      to include templates or database storage in future iterations.</p>
+  </section>
+</body>
+</html>
