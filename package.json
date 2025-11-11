@@ -1,0 +1,13 @@
+{
+  "name": "lab7-madlib",
+  "version": "1.0.0",
+  "description": "ITC505 Lab 7 - Mad Lib using ExpressJS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js local"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
